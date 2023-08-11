@@ -38,9 +38,6 @@ USAGE
 
 DESCRIPTION
   Fix node version by using nvm or n based on package.json
-
-EXAMPLES
-  $ oex fix
 ```
 
 _See code: [dist/commands/fix/index.ts](https://github.com/tzdesign/node-package-version/blob/v0.0.0/dist/commands/fix/index.ts)_
