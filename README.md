@@ -62,3 +62,16 @@ DESCRIPTION
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.15/src/commands/help.ts)_
 <!-- commandsstop -->
+
+
+# Use as pre command with zsh
+
+Just add this code at the end of your ```.zshrc``` file.
+
+```shell
+precmd(){
+    npv fix
+}
+```
+
+If you go into a new terminal in vscode or cd into a project, it will check the node version and will switch it.
