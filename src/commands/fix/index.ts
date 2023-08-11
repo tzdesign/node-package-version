@@ -1,9 +1,14 @@
 import {Command} from '@oclif/core'
 import {sync} from 'command-exists'
 import {execSync} from 'node:child_process'
-import {clean, maxSatisfying, minVersion, satisfies} from 'semver'
+import {
+  SemVer,
+  clean,
+  lte,
+  maxSatisfying,
+  satisfies,
+} from 'semver'
 import {findPackageJson} from '../../find-package-json'
-import {generateVersions} from '../../generate-versions'
 
 export default class Fix extends Command {
   static description =
@@ -25,16 +30,26 @@ export default class Fix extends Command {
     const hasNode = sync('node')
 
     if (hasNode === false) throw new Error('node not found')
+    if (hasN === false && hasNvm === false)
+      throw new Error('n or nvm not found')
 
-    const lts = execSync(`${hasN ? 'n' : 'nvm'} ls-remote --lts`).toString()
+    const nodeManager = hasN ? 'n' : 'nvm'
+    const lts = execSync(`${nodeManager} ls-remote --lts`).toString()
+    const allVersions = execSync(`${nodeManager} ls-remote --all`)
+    .toString()
+    .split('\n')
+    .filter(v => {
+      if (v.trim() === '') return false
+
+      const sem = new SemVer(v)
+      return lte(sem, lts)
+    })
+
     const nodeVersion = clean(execSync('node -v').toString()) ?? ''
     const isValidNodeVersion = satisfies(nodeVersion, versionNeeded)
-    const minNodeVersion = minVersion(versionNeeded)
 
-    const validNodeVersion = maxSatisfying(
-      generateVersions(minNodeVersion?.version ?? '16.0.0', lts),
-      versionNeeded,
-    )
+    const validNodeVersion = maxSatisfying(allVersions, versionNeeded)
+
     if (hasN && isValidNodeVersion === false) {
       this.log(`changing version with n to ${validNodeVersion}`)
       await execSync(`n ${validNodeVersion}`)
