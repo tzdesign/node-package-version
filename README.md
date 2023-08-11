@@ -25,25 +25,22 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-- [node-package-version](#node-package-version)
-- [Usage](#usage)
-- [Commands](#commands)
-  - [`npv fix`](#npv-fix)
-  - [`npv help [COMMANDS]`](#npv-help-commands)
+* [`npv fix`](#npv-fix)
+* [`npv help [COMMANDS]`](#npv-help-commands)
 
 ## `npv fix`
 
-Say hello
+Fix node version by using nvm or n based on package.json
 
 ```
 USAGE
   $ npv fix
 
 DESCRIPTION
-  Say hello
+  Fix node version by using nvm or n based on package.json
 
 EXAMPLES
-  $ oex info
+  $ oex fix
 ```
 
 _See code: [dist/commands/fix/index.ts](https://github.com/tzdesign/node-package-version/blob/v0.0.0/dist/commands/fix/index.ts)_
