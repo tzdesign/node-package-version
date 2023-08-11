@@ -8,6 +8,7 @@ If it's a pretty open range like >=18.0.0 for example. It will determine and ins
 <!-- toc -->
 * [Usage](#usage)
 * [Commands](#commands)
+* [Use as pre command with zsh](#use-as-pre-command-with-zsh)
 <!-- tocstop -->
 # Usage
 <!-- usage -->
@@ -16,7 +17,7 @@ $ npm install -g node-package-version
 $ npv COMMAND
 running command...
 $ npv (--version)
-node-package-version/0.0.1 darwin-x64 node-v18.17.1
+node-package-version/0.0.3 darwin-x64 node-v18.17.1
 $ npv --help [COMMAND]
 USAGE
   $ npv COMMAND
@@ -40,7 +41,7 @@ DESCRIPTION
   Fix node version by using nvm or n based on package.json
 ```
 
-_See code: [dist/commands/fix/index.ts](https://github.com/tzdesign/node-package-version/blob/v0.0.1/dist/commands/fix/index.ts)_
+_See code: [dist/commands/fix/index.ts](https://github.com/tzdesign/node-package-version/blob/v0.0.3/dist/commands/fix/index.ts)_
 
 ## `npv help [COMMANDS]`
 
