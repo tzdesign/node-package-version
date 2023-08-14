@@ -1,6 +1,6 @@
 {
   "name": "node-package-version",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Will switch the node version based on package.json",
   "author": "Tobias Zimmermann <ich@tzdesign.de>",
   "bin": {

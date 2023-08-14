@@ -17,7 +17,7 @@ $ npm install -g node-package-version
 $ npv COMMAND
 running command...
 $ npv (--version)
-node-package-version/0.0.6 darwin-x64 node-v16.20.2
+node-package-version/0.0.7 darwin-x64 node-v16.20.2
 $ npv --help [COMMAND]
 USAGE
   $ npv COMMAND
@@ -41,7 +41,7 @@ DESCRIPTION
   Fix node version by using nvm or n based on package.json
 ```
 
-_See code: [dist/commands/fix/index.ts](https://github.com/tzdesign/node-package-version/blob/v0.0.6/dist/commands/fix/index.ts)_
+_See code: [dist/commands/fix/index.ts](https://github.com/tzdesign/node-package-version/blob/v0.0.7/dist/commands/fix/index.ts)_
 
 ## `npv help [COMMANDS]`
 
