@@ -3,7 +3,7 @@ import {join, resolve} from 'node:path'
 
 export async function findPackageJson(
   cwd?: string,
-): Promise<Record<string, any>> {
+): Promise<Record<string, any> | undefined> {
   const startDir = cwd || process.env.INIT_CWD || process.cwd()
   let dir = startDir
   let prevDir
@@ -26,5 +26,5 @@ export async function findPackageJson(
     dir = resolve(dir, '..')
   } while (prevDir !== dir)
 
-  throw new Error(`package.json not found in ${startDir} and its ancestors`)
+  return undefined
 }
