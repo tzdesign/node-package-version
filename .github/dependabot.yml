@@ -1,22 +1,20 @@
 version: 2
 updates:
-  - package-ecosystem: 'npm'
-    directory: '/'
+  - package-ecosystem: "yarn"
+    directory: "/"
     schedule:
-      interval: 'weekly'
-      day: 'saturday'
-    versioning-strategy: 'increase'
-    labels:
-      - 'dependencies'
-    open-pull-requests-limit: 5
+      interval: "monthly"
+      day: "sunday"
+    versioning-strategy: "increase"
+    open-pull-requests-limit: 2
     pull-request-branch-name:
-      separator: '-'
+      separator: "-"
     commit-message:
       # cause a release for non-dev-deps
       prefix: fix(deps)
       # no release for dev-deps
       prefix-development: chore(dev-deps)
     ignore:
-      - dependency-name: '@salesforce/dev-scripts'
-      - dependency-name: '*'
-        update-types: ['version-update:semver-major']
+      - dependency-name: "@salesforce/dev-scripts"
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
