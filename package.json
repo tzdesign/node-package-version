@@ -20,7 +20,7 @@
   "dependencies": {
     "@oclif/core": "^2",
     "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^3.2.7",
+    "@oclif/plugin-plugins": "^3.3.1",
     "@types/command-exists": "^1.2.0",
     "command-exists": "^1.2.9",
     "semver": "^7.5.4"
